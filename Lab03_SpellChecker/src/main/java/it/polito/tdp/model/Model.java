@@ -4,11 +4,12 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Model {
 
-	ArrayList<String> dizionario=new ArrayList<String>();
+	LinkedList<String> dizionario=new LinkedList<String>();
 	
 	public void loadDictionary(String language) {
 		dizionario.clear();
@@ -60,7 +61,7 @@ public class Model {
 		boolean controllo=false;
 		for(String word:inputTextList) {
 			controllo=false;
-			while(min!=max){
+			while(min!=max && !controllo){
 			if(word.compareTo(dizionario.get(indice))==0) {
 				controllo=true;
 				}else if(word.compareTo(dizionario.get(indice))>0) {
