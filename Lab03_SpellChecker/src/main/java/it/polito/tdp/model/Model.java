@@ -61,8 +61,8 @@ public class Model {
 		boolean controllo=false;
 		for(String word:inputTextList) {
 			controllo=false;
-			while(min!=max && !controllo){
-			if(word.compareTo(dizionario.get(indice))==0) {
+			while(min!=max && max-min!=1 && !controllo){
+			if(word.compareTo(dizionario.get(indice))==0 ) {
 				controllo=true;
 				}else if(word.compareTo(dizionario.get(indice))>0) {
 					min=indice;
@@ -72,7 +72,7 @@ public class Model {
 					indice=(min+max)/2;
 				}
 			}
-			if(!controllo)
+			if(!controllo && word.compareTo(dizionario.get(indice+1))!=0)
 			paroleSbagliate.add(word);
 		}
 		return paroleSbagliate;
