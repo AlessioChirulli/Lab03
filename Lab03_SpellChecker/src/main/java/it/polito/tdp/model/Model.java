@@ -55,11 +55,11 @@ public class Model {
 	
 	public ArrayList<String> spellCheckTextDicotomica(List<String> inputTextList){
 		ArrayList<String> paroleSbagliate=new ArrayList<String>();
-		int indice=dizionario.size()/2;
-		int max=dizionario.size();
-		int min=0;
 		boolean controllo=false;
 		for(String word:inputTextList) {
+			int indice=dizionario.size()/2;
+			int max=dizionario.size();
+			int min=0;
 			controllo=false;
 			while(min!=max && max-min!=1 && !controllo){
 			if(word.compareTo(dizionario.get(indice))==0 ) {
